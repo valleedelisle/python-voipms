@@ -1436,6 +1436,7 @@ class DidsSet(BaseApi):
             "routing_match": routing_match,
             "routing_nomatch": routing_nomatch,
             "starthour": starthour,
+            "startminute": startminute,
             "endhour": endhour,
             "endminute": endminute,
             "weekdaystart": weekdaystart,
