@@ -246,7 +246,7 @@ class CallsGet(BaseApi):
 
         parameters = {}
 
-        if not isinstance(account, int):
+        if not isinstance(account, str):
             raise ValueError("[Required] Filter Call Recordings by Account (Values from getCallAccounts)")
         parameters["account"] = account
 
@@ -279,6 +279,7 @@ class CallsGet(BaseApi):
             if not isinstance(kwargs["call_type"], str):
                 raise ValueError("Call Type for Filtering Call Recording (Accepted values: 'all', 'incoming', and 'outgoing')")
             parameters["call_type"] = kwargs.pop("call_type")
+        return self._voipms_client._get(method, parameters)
 
     def rates(self, package, query):
         """
