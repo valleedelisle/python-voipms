@@ -21,7 +21,7 @@ class CallsSend(BaseApi):
         super(CallsSend, self).__init__(*args, **kwargs)
         self.endpoint = 'calls'
 
-    def recording_email(self, client=None):
+    def recording_email(self, account, email, callrecording, client=None):
         """
         Send information and audio file to email account
 
@@ -35,7 +35,7 @@ class CallsSend(BaseApi):
         """
         method = "sendCallRecordingEmail"
 
-        if not isinstance(account, int):
+        if not isinstance(account, str):
             raise ValueError("[Required] Filter Call Recordings by Account (Values from getCallAccounts)")
 
         if not isinstance(email, str):

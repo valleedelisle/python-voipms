@@ -212,7 +212,7 @@ class CallsGet(BaseApi):
         """
         method = "getCallRecording"
 
-        if not isinstance(account, int):
+        if not isinstance(account, str):
             raise ValueError("[Required] Main Account or Sub Account related to the call recording (Values from getCallRecordings)")
 
         if not isinstance(callrecording, str):
